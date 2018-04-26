@@ -27,6 +27,66 @@ import PlaygroundSupport
 // Create a new canvas
 let canvas = Canvas(width: 400, height: 600)
 
+//create background orange colour
+canvas.fillColor = Color(hue: 15, saturation: 99, brightness: 96, alpha: 100)
+
+canvas.drawRectangle(bottomLeftX: 0, bottomLeftY: 0, width: 400, height: 600)
+
+//draw alternating rectangles
+var yPosition = 0
+var xPosition = 0
+for rectangleColor in 1...20 {
+    if rectangleColor % 2 == 1 {
+        canvas.fillColor = Color.blue
+        yPosition = 0
+        
+    } else{
+            canvas.fillColor = Color.green
+        yPosition = 50
+        
+    }
+   
+    canvas.drawRectangle(bottomLeftX: xPosition, bottomLeftY: yPosition, width: 50, height: 350)
+    
+    xPosition += 50
+}
+
+
+
+//drawing "sloan"
+canvas.textColor = Color.white
+
+canvas.drawText(message: "sloan", size: 95, x: 150, y: 400, kerning: 0)
+
+//other text
+canvas.drawText(message: """
+saturday
+december 19 1992
+9pm
+""", size: 10, x: 20, y: 540, kerning: -0.25)
+
+canvas.drawText(message: """
+with
+thrush hermit
+the quahogs
+""", size: 10, x: 150, y: 540, kerning: -0.25)
+
+
+canvas.drawText(message: """
+camero's cafe
+halifax
+nova scotia
+""", size: 10, x: 275, y: 540, kerning: -0.25)
+
+
+
+
+
+
+
+
+
+
 // HINT: Remember that all shapes have a fill and a border.
 //       You can turn off the fill or border if desired.
 
